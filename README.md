@@ -57,6 +57,6 @@ flowchart LR;
     A(file create) -- "touch fileA.txt" --> B(untracked);
     B(untracked) -- "git add ." --> C(staged);
     C(staged) -- "git commit -m ..." --> D(tracked/comitted);
-    C(staged) -- "edit file" -- "modified" -- "git add ." --> C(staged);
+    C(staged) -- "edit file" --> E(modified) -- "git add ." --> C(staged);
 ```
 
