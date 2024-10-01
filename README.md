@@ -33,3 +33,30 @@ git remote add origin URL_TO_SSH_GITHUB
 
 По этим коммитам можно посмотреть лог репозитория и понять какие проводились изменения, но необходимо писать информативные комментарии к коммитам.
 
+### Статусы файлов
+
+Через команду 
+
+```bash
+git status
+```
+
+Можно ознакомиться с текущим состоянием репозитория.
+
+Файлы могут принимать такие статусы как:
+
+- untracked;
+- tracked;
+- staged;
+- modified.
+
+Их переходы можно описать схемой.
+
+```mermaid
+graph LR;
+    file create -- "touch fileA.txt" --> untracked;
+    untracked -- "git add ." --> staged;
+    staged -- "git commit -m ..." --> tracked/comitted;
+    staged -- "edit file" -- "modified" -- "git add ." --> staged;
+```
+
