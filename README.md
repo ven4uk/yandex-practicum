@@ -53,10 +53,10 @@ git status
 Их переходы можно описать схемой.
 
 ```mermaid
-graph LR;
-    file create -- "touch fileA.txt" --> untracked;
-    untracked -- "git add ." --> staged;
-    staged -- "git commit -m ..." --> tracked/comitted;
-    staged -- "edit file" -- "modified" -- "git add ." --> staged;
+flowchart LR;
+    A(file create) -- "touch fileA.txt" --> B(untracked);
+    B(untracked) -- "git add ." --> C(staged);
+    C(staged) -- "git commit -m ..." --> D(tracked/comitted);
+    C(staged) -- "edit file" -- "modified" -- "git add ." --> C(staged);
 ```
 
